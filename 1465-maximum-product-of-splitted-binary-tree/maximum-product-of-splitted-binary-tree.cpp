@@ -16,8 +16,11 @@ public:
     int totalSum(TreeNode* root){
         if(root==NULL)
         return 0;
-        long totalsum=root->val+totalSum(root->left)+totalSum(root->right);
-        maxp=max(maxp,totalsum*(sum-totalsum));
+        int leftsubtreesum=totalSum(root->left);
+        int rightsubtreesum=totalSum(root->right);
+        long totalsum=root->val+leftsubtreesum+rightsubtreesum;
+        long product=totalsum*(sum-totalsum);
+        maxp=max(maxp,product);
         return totalsum;
     }
     int maxProduct(TreeNode* root) {
