@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //test
     int minCost(vector<vector<int>>& grid, int K) {
         int n=grid.size(), m=grid[0].size();
         int MAX=INT_MAX;
